@@ -2,7 +2,7 @@
 
 Auto-fetches Counter-Strike news, summarizes the top stories into templated
 bullet-point sections with Claude, and renders a finished MP4 with Remotion.
-No talking-head avatar — clean animated bullet points with background music.
+No talking-head avatar — clean animated bullet points, optionally with background music.
 
 ## How it works
 
