@@ -29,6 +29,21 @@ describe('parseSummaryResponse', () => {
     expect(sb.language).toBe('en');
     expect(sb.sections).toHaveLength(1);
   });
+
+  it('injected meta wins over model-returned date and language', () => {
+    const modelWithWrongMeta = {
+      title: 'Daily CS — June 29',
+      date: '1999-01-01',
+      language: 'zh',
+      sections: [
+        { category: 'Roster Move', headline: 'NAVI shuffle', bullets: ['a', 'b'], source: { name: 'HLTV', url: 'https://www.hltv.org/news/1' } },
+      ],
+    };
+    const text = '```json\n' + JSON.stringify(modelWithWrongMeta) + '\n```';
+    const sb = parseSummaryResponse(text, { date: '2026-06-29', language: 'en' });
+    expect(sb.date).toBe('2026-06-29');
+    expect(sb.language).toBe('en');
+  });
 });
 
 describe('buildPrompt', () => {
@@ -38,6 +53,7 @@ describe('buildPrompt', () => {
       { language: 'zh', maxStories: 5, maxBulletsPerSection: 4, date: '2026-06-29' },
     );
     expect(system.length).toBeGreaterThan(0);
+    expect(system).toContain('Roster Move');
     expect(user).toContain('NAVI bench b1t');
     expect(user).toContain('zh');
   });

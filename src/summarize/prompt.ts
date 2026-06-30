@@ -61,6 +61,6 @@ export function parseSummaryResponse(
   meta: { date: string; language: 'en' | 'zh' },
 ): Storyboard {
   const raw = JSON.parse(extractJson(text));
-  const merged = { date: meta.date, language: meta.language, ...raw };
+  const merged = { ...raw, date: meta.date, language: meta.language };
   return parseStoryboard(merged);
 }
