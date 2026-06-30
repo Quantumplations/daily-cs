@@ -10,7 +10,7 @@
 
 ## Global Constraints
 
-- Node 20+. TypeScript strict mode. ES modules (`"type": "module"`).
+- Node 22+ (the firecrawl SDK requires Node ≥22). TypeScript strict mode. ES modules (`"type": "module"`).
 - Video: 1920×1080, 30 fps.
 - Languages supported: `en` and `zh` only.
 - Model id for summarize: `claude-opus-4-8` (configurable in `config.json`).
@@ -1505,7 +1505,7 @@ render (Remotion)  ->  out/daily-cs-DATE.mp4
 
 ## Prerequisites
 
-- Node.js 20+
+- Node.js 22+
 - ffmpeg is bundled by Remotion; no separate install needed.
 
 ## Setup
