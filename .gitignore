@@ -3,6 +3,8 @@ data/*
 !data/.gitkeep
 out/*
 !out/.gitkeep
+public/music/*
+!public/music/.gitkeep
 .env
 *.log
 .superpowers/

@@ -1,29 +1,11 @@
 import { loadConfig } from './config';
-import { today } from './paths';
+import { parseArgs } from './args';
 import { runFetch } from './fetch/index';
 import { runSummarize } from './summarize/index';
 import { runRender } from './render/index';
 
-type Args = { command: string; date: string; language: 'en' | 'zh' };
-
-function parseArgs(argv: string[]): Args {
-  const command = argv[0] ?? 'all';
-  const cfg = loadConfig();
-  let date = today();
-  let language: 'en' | 'zh' = cfg.language;
-  for (let i = 1; i < argv.length; i++) {
-    if (argv[i] === '--date') date = argv[++i];
-    else if (argv[i] === '--lang') {
-      const v = argv[++i];
-      if (v !== 'en' && v !== 'zh') throw new Error(`--lang must be en or zh, got ${v}`);
-      language = v;
-    }
-  }
-  return { command, date, language };
-}
-
 async function main(): Promise<void> {
-  const { command, date, language } = parseArgs(process.argv.slice(2));
+  const { command, date, language } = parseArgs(process.argv.slice(2), loadConfig().language);
   switch (command) {
     case 'fetch':
       await runFetch({ date });

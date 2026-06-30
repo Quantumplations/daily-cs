@@ -56,13 +56,16 @@ npm run daily -- --lang zh
 ## Configuration
 
 Edit `config.json`: news query, story/bullet counts, model id, video size,
-and `music` (path to a background track under `assets/`, or `null` for silent).
+and `music` (path to a background track under `public/`, or `null` for silent).
+Your Anthropic account must have access to the configured `model` (default: `claude-opus-4-8`);
+if not, change `model` in `config.json` to one you can use.
 
 ## Background music
 
-Music is off by default. To add it, drop an audio file in `assets/music/` and
-set `"music": "music/your-track.mp3"` in `config.json`. Use a track you have
-the rights to.
+Music is off by default. To add it, drop an audio file in `public/music/` and
+set `"music": "music/your-track.mp3"` in `config.json` (the path is relative
+to `public/`, which is where Remotion's `staticFile()` resolves from). Use a
+track you have the rights to — files in `public/music/` are git-ignored.
 
 ## Adding new section templates
 
@@ -73,4 +76,5 @@ Section styling is data-driven by `category`. Add or recolor categories in
 ## What's not included yet
 
 TTS voiceover, auto-upload, and scheduled runs are intentionally left out of
-v1. The audio track is wired so TTS can be added later.
+v1. Background music already plays via the audio track; a TTS voiceover could
+ride the same track later.
