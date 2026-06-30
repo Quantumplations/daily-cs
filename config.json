@@ -1,0 +1,18 @@
+{
+  "language": "en",
+  "model": "claude-opus-4-8",
+  "fetch": {
+    "query": "Counter-Strike CS2 news",
+    "limit": 10
+  },
+  "summary": {
+    "maxStories": 5,
+    "maxBulletsPerSection": 4
+  },
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "music": null
+}

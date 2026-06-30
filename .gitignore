@@ -1,0 +1,8 @@
+node_modules/
+data/*
+!data/.gitkeep
+out/*
+!out/.gitkeep
+.env
+*.log
+.superpowers/
