@@ -4,6 +4,35 @@ Auto-fetches Counter-Strike news, summarizes the top stories into templated
 bullet-point sections with Claude, and renders a finished MP4 with Remotion.
 No talking-head avatar — clean animated bullet points, optionally with background music.
 
+## Quickstart
+
+```bash
+# 1. install Node.js 22+  (https://nodejs.org)
+git clone https://github.com/Quantumplations/daily-cs
+cd daily-cs
+npm install
+
+# 2. see it work right now, no keys needed — renders a sample video into out/
+npm run render
+#    (or `npm run preview` to live-edit the templates in your browser)
+
+# 3. to make videos from real news, add two API keys:
+cp .env.example .env
+#    then edit .env and paste:
+#      ANTHROPIC_API_KEY  -> https://console.anthropic.com   (paid, ~cents per run)
+#      FIRECRAWL_API_KEY  -> https://www.firecrawl.dev        (free tier available)
+
+# 4. make today's video (add `--lang zh` for Chinese)
+npm run daily
+#    output lands in out/daily-cs-<date>.mp4
+```
+
+Notes:
+- The model defaults to `claude-opus-4-8`. If your Anthropic account can't use it,
+  change `model` in `config.json` to one you can.
+- Tweak the news query, language, and story count in `config.json`; tweak the
+  section colors/icons in `remotion/theme.ts`.
+
 ## How it works
 
 ```
