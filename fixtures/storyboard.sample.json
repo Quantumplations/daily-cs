@@ -1,0 +1,47 @@
+{
+  "date": "2026-06-29",
+  "language": "en",
+  "title": "Daily CS — June 29",
+  "sections": [
+    {
+      "category": "Roster Move",
+      "headline": "NAVI shake up their roster",
+      "bullets": [
+        "b1t moves to the bench after a six-month slump",
+        "Academy AWPer promoted to the main lineup",
+        "Coach hints the change is 'permanent for now'"
+      ],
+      "source": { "name": "HLTV", "url": "https://www.hltv.org/news/sample-navi" }
+    },
+    {
+      "category": "Match Result",
+      "headline": "Vitality edge FaZe 2-1 in the BLAST final",
+      "bullets": [
+        "ZywOo drops 28 in the decider on Ancient",
+        "FaZe force overtime on Mirage but fall short",
+        "Vitality take their third trophy of the season"
+      ],
+      "source": { "name": "HLTV", "url": "https://www.hltv.org/news/sample-vitality" }
+    },
+    {
+      "category": "Patch",
+      "headline": "CS2 patch reworks smoke interactions",
+      "bullets": [
+        "HE grenades now clear a larger smoke radius",
+        "Sub-tick movement bug on stairs fixed",
+        "New de_train competitive layout enters the pool"
+      ],
+      "source": { "name": "Steam", "url": "https://store.steampowered.com/news/sample-patch" }
+    },
+    {
+      "category": "Event",
+      "headline": "Major qualifier brackets are locked",
+      "bullets": [
+        "16 teams confirmed for the Shanghai qualifier",
+        "Two spots remain in the open-qualifier gauntlet",
+        "Group draw scheduled for next Friday"
+      ],
+      "source": { "name": "Liquipedia", "url": "https://liquipedia.net/counterstrike/sample" }
+    }
+  ]
+}
